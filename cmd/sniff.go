@@ -32,13 +32,16 @@ to quickly create a Cobra application.`,
 		defer resp.Body.Close()
 		body, _ := io.ReadAll(resp.Body)
 
-		regex := regexp.MustCompile(``)
-		subdomains := regex.FindAllString(string(body), -1)
+		re := regexp.MustCompile(`(?m)<TD>([a-zA-Z0-9\.\-]+)\.` + args[0] + `</TD>`)
+		matches := re.FindAllStringSubmatch(string(body), -1)
 
-		for _, subdomain := range subdomains {
-			fmt.Println(subdomain)
+		seen := make(map[string]bool)
+		for _, match := range matches {
+			if !seen[match[1]] {
+				seen[match[1]] = true
+				fmt.Println(match[1])
+			}
 		}
-
 	},
 }
 
