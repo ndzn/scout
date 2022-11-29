@@ -9,6 +9,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// todo:
+// Sniff out information about a website
+// Find out information about a webserver from those subdomains
+// Find out if its a vuln webserver
+
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "scout",

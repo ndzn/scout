@@ -12,7 +12,7 @@ import (
 // tunnelCmd represents the tunnel command
 var tunnelCmd = &cobra.Command{
 	Use:   "tunnel",
-	Short: "A brief description of your command",
+	Short: "Finds out information about a webserver.",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

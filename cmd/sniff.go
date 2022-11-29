@@ -16,7 +16,7 @@ import (
 // sniffCmd represents the sniff command
 var sniffCmd = &cobra.Command{
 	Use:   "sniff",
-	Short: "A brief description of your command",
+	Short: "Sniffs out information about a website.",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
@@ -39,9 +39,11 @@ to quickly create a Cobra application.`,
 		for _, match := range matches {
 			if !seen[match[1]] {
 				seen[match[1]] = true
-				fmt.Println(match[1])
+				// print out the subdomain with root domain
+				fmt.Println(match[1] + "." + args[0])
 			}
 		}
+
 	},
 }
 
