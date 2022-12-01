@@ -9,6 +9,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// todo:
+// get headers for server
+// check version
+// check against known public vulns
+
 // tunnelCmd represents the tunnel command
 var tunnelCmd = &cobra.Command{
 	Use:   "tunnel",
@@ -37,3 +42,8 @@ func init() {
 	// is called directly, e.g.:
 	// tunnelCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
+
+// func getHeaders(w http.ResponseWriter, r *http.Request) {
+// 	ua := r.Header.Get("Server")
+// 	fmt.Println(ua)
+// }
